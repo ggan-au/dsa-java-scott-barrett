@@ -6,16 +6,14 @@ public class Main {
 
         LinkedList myLinkedList = new LinkedList(1);
         myLinkedList.append(2);
-        myLinkedList.prepend(99);
+        myLinkedList.append(3);
+        myLinkedList.append(4);
+        myLinkedList.append(5);
 
         myLinkedList.printList();
         System.out.println("===============");
-        myLinkedList.removeLast();
+        System.out.println(myLinkedList.set(8, 77));
         myLinkedList.printList();
-        System.out.println("===============");
-        myLinkedList.removeLast();
-        myLinkedList.printList();
-        System.out.println("===============");
 
     }
 
