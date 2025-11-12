@@ -12,7 +12,8 @@ public class Main {
 
         myLinkedList.printList();
         System.out.println("===============");
-        System.out.println(myLinkedList.insert(3, 999));
+        System.out.println("Removed: " + myLinkedList.remove(4).value);
+        System.out.println("===============");
         myLinkedList.printList();
 
     }
