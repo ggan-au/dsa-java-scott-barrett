@@ -12,7 +12,7 @@ public class Main {
 
         myLinkedList.printList();
         System.out.println("===============");
-        System.out.println(myLinkedList.set(8, 77));
+        System.out.println(myLinkedList.insert(3, 999));
         myLinkedList.printList();
 
     }
