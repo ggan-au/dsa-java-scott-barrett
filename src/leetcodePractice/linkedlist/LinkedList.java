@@ -1,4 +1,4 @@
-package datastructures.linkedlist;
+package leetcodePractice.linkedlist;
 
 public class LinkedList {
     private Node head;
@@ -179,23 +179,16 @@ public class LinkedList {
             before = temp;
             temp = after;
         }
+    }
 
-
-
-//        Node temp = head.next;
-//        Node before = head;
-//        Node after = temp.next;
-//        while (after != null) {
-//            temp.next = before;
-//            before = temp;
-//            temp = after;
-//            after = after.next;
-//        }
-//
-//        temp.next = before;
-//        tail = head;
-//        tail.next = null;
-//        head = temp;
+    public Node findMiddleNode() {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 
 }

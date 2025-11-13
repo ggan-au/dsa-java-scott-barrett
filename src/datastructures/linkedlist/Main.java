@@ -12,7 +12,8 @@ public class Main {
 
         myLinkedList.printList();
         System.out.println("===============");
-        System.out.println("Removed: " + myLinkedList.remove(4).value);
+        System.out.println("Reversed: ");
+        myLinkedList.reverse();
         System.out.println("===============");
         myLinkedList.printList();
 
