@@ -1,5 +1,10 @@
 package leetcodePractice.linkedlist;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
 public class LinkedList {
     private Node head;
     private Node tail;
@@ -168,17 +173,19 @@ public class LinkedList {
     }
 
     public void reverse() {
-        Node temp = head;
-        head = tail;
-        tail = temp;
-        Node after = temp.next;
-        Node before = null;
+      Node temp = head;
+      head = tail;
+      tail = temp;
+
+      Node after = temp.next;
+      Node before = null;
         for (int i = 0; i < length; i++) {
-            after = temp.next;   //LINE WORKS
+            after = temp.next;
             temp.next = before;
             before = temp;
             temp = after;
         }
+
     }
 
     public Node findMiddleNode() {
@@ -225,6 +232,39 @@ public class LinkedList {
             fast = fast.next;
         }
         return slow;
+    }
+
+    //O(n2) implementation
+//    public void removeDuplicates() {
+//        Node current = head;
+//        while (current != null) {
+//            Node runner = current;
+//            while (runner.next != null) {
+//                if (current.value == runner.next.value) {
+//                    runner.next = runner.next.next;
+//                    length--;
+//                } else {
+//                    runner = runner.next;
+//                }
+//            }
+//            current = current.next;
+//        }
+//    }
+
+    public void removeDuplicates() {
+        Set<Integer> values = new HashSet<>();
+        Node previous = null;
+        Node current = head;
+        while (current != null) {
+            if (values.contains(current.value)) {
+                previous.next = current.next;
+                length--;
+            } else {
+                values.add(current.value);
+                previous = current;
+            }
+            current = current.next;
+        }
     }
 
 }

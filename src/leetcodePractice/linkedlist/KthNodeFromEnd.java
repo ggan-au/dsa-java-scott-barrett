@@ -8,6 +8,9 @@ public class KthNodeFromEnd {
         myLinkedList.append(4);
         myLinkedList.append(5);
 
-        System.out.println("kth node from the end: " +  myLinkedList.findKthFromEnd(3).value);
+        myLinkedList.printList();
+        System.out.println("================");
+        myLinkedList.reverse();
+        myLinkedList.printList();
     }
 }
