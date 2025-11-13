@@ -11,8 +11,8 @@ public class LinkedList {
         this.length = 1;
     }
 
-    class Node {
-        int value;
+    public class Node {
+        public int value;
         Node next = null;
 
         public Node(int value) {
@@ -203,6 +203,28 @@ public class LinkedList {
             }
         }
         return false;
+    }
+
+    public void makeEmpty() {
+        head = null;
+        tail = null;
+    }
+
+    public Node findKthFromEnd(int k) {
+        Node slow = head;
+        Node fast = head;
+        for (int i = 0; i < k; i++) {
+            if (head == null) {
+                return null;
+            }
+            fast = fast.next;
+        }
+
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
     }
 
 }
