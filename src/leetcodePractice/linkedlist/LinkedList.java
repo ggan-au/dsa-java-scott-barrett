@@ -1,9 +1,7 @@
 package leetcodePractice.linkedlist;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.sql.Array;
+import java.util.*;
 
 public class LinkedList {
     private Node head;
@@ -265,6 +263,16 @@ public class LinkedList {
             }
             current = current.next;
         }
+    }
+
+    public int binaryToDecimal() {
+        int num = 0;
+        Node current = head;
+        while (current != null) {
+            num = num * 2 + current.value;
+            current = current.next;
+        }
+        return num;
     }
 
 }
